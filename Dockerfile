@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y vim curl docker.io docker-compose pytho
 	&& git clone https://gitee.com/chalken/fisco-repository.git \
 	&& curl -#LO https://gitee.com/FISCO-BCOS/console/raw/master/tools/download_console.sh \
 	&& bash download_console.sh \
+	&& sed -i 's/3.4.0/3.2.0/g' download_console.sh \
 	&& curl -#LO https://osp-1257653870.cos.ap-guangzhou.myqcloud.com/FISCO-BCOS/FISCO-BCOS/releases/v3.2.0/BcosBuilder.tgz && tar -xvf BcosBuilder.tgz
 	
 RUN unzip $MYPATH/fisco-repository/dist.zip \
